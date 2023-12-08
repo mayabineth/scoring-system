@@ -1,0 +1,35 @@
+.btn {
+  margin: 0.5rem 0;
+}
+.submit-btn {
+  width: 10rem;
+  background-color: var(--clr-grey-1);
+}
+.submit-btn:disabled {
+  background-color: var(--clr-red-light);
+  cursor: default;
+}
+.answers {
+  margin-left: 2rem;
+}
+.grid {
+  display: grid;
+  gap: 1rem;
+}
+.big-field {
+  width: 36%;
+}
+.error-msg {
+  color: var(--clr-red-light);
+}
+input,
+textarea {
+  padding: 0.25rem;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  border: transparent;
+  background-color: #fff;
+}
+textarea::-webkit-scrollbar {
+  display: none;
+}

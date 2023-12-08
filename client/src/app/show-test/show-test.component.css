@@ -1,0 +1,19 @@
+
+.test {
+  background-color: var(--clr-white);
+  border-radius: var(--radius);
+  box-shadow: var(--light-shadow);
+  padding: 1.3rem;
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: left;
+  display: grid;
+  gap: 1.5rem;
+}
+.ques {
+  display: grid;
+  gap: 1rem;
+}
+.answers {
+  margin-left: 2rem;
+}

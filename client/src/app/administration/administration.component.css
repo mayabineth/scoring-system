@@ -1,0 +1,26 @@
+.test {
+  background-color: var(--clr-white);
+  border-radius: var(--radius);
+  box-shadow: var(--light-shadow);
+  padding: 1.3rem;
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: left;
+}
+.test:hover{
+    background-color: var(--clr-grey-10);
+}
+.filter-header {
+  display: grid;
+  grid-template-columns: 5fr 1fr;
+  gap: 0.5rem;
+}
+.filter-input {
+  border: none;
+  box-shadow: var(--light-shadow);
+  background: var(--clr-white);
+  padding-left: 0.5rem;
+  font-size: 1rem;
+  border-radius: var(--radius);
+  color: var(--clr-grey-3);
+}

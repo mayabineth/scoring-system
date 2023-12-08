@@ -1,0 +1,39 @@
+<div class="section">
+  <h3>Tests Performing</h3>
+
+  <form class="flex-row" [formGroup]="selectCompanyForm" (ngSubmit)="submit()">
+    <input
+      type="text"
+      class="company_field"
+      formControlName="company"
+      placeholder="Enter Company Name..."
+    />
+
+    <button [disabled]="selectCompanyForm.invalid" type="submit">Done</button>
+    <div>{{ company_msg }}</div>
+  </form>
+  <div class="test" *ngFor="let test of company_tests">
+    <h4>name: {{ test.name }} | description: {{ test.desc }}</h4>
+    <div class="flex-row">
+      <h4 *ngIf="checkIfTestDone(test.test_id)">
+        score: {{ checkIfTestDone(test.test_id) }}
+      </h4>
+      <mat-icon
+        *ngIf="checkIfTestDone(test.test_id)"
+        matTooltip="show test"
+        class="fill-test-icon"
+        (click)="onShowTest(test)"
+      >
+        subject</mat-icon
+      >
+    </div>
+    <mat-icon
+      *ngIf="!checkIfTestDone(test.test_id)"
+      matTooltip="execute test"
+      class="fill-test-icon"
+      (click)="onShowTest(test)"
+    >
+      edit_note
+    </mat-icon>
+  </div>
+</div>

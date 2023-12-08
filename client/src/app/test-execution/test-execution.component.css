@@ -1,0 +1,27 @@
+.bold-name {
+  color: var(--clr-grey-5);
+}
+.test {
+  background-color: var(--clr-white);
+  border-radius: var(--radius);
+  box-shadow: var(--light-shadow);
+  padding: 1.3rem;
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: left;
+}
+.ques {
+  margin-bottom: 2rem;
+}
+.grid {
+  display: grid;
+  gap: 2rem;
+}
+.small-gap-grid {
+  display: grid;
+  gap: 0.5rem;
+}
+.submit-btn {
+  width: 10rem;
+  background-color: var(--clr-grey-1);
+}

@@ -1,0 +1,14 @@
+<div class="section" class="section">
+  <div *ngIf="test" class="test">
+    <h4>name: {{ test.name }}</h4>
+    <h4>description: {{ test.desc }}</h4>
+    <div *ngFor="let ques of test.questions; index as i" class="ques">
+      <h4>
+        {{ i + 1 }}. question: {{ ques.question }} (Weight: {{ ques.weight }})
+      </h4>
+      <div *ngFor="let answer of ques.answers; index as i" class="answers">
+        <h4>{{ i + 1 }}. Answer: {{ answer.answer }} (Score: {{ answer.score }})</h4>
+      </div>
+    </div>
+  </div>
+</div>

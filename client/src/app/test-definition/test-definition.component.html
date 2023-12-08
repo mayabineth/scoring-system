@@ -1,0 +1,91 @@
+<div class="section">
+  <form class="grid" [formGroup]="testForm" (ngSubmit)="onSubmit()">
+    <div class="flex-row">
+      <h3>Test Definition</h3>
+      <button
+        [disabled]="testForm.invalid || questions().controls.length == 0"
+        class="flex-around submit-btn"
+        type="submit"
+      >
+        submit test <mat-icon> send </mat-icon>
+      </button>
+    </div>
+    <h4>All Fields Must Be Completed.</h4>
+    <h4>
+      Answer Score and Question Weight are Numeric. Question Weights add up to
+      1.
+    </h4>
+    <h4 class="error-msg">
+      {{ errorMsg }}
+    </h4>
+    <input
+      type="text"
+      formControlName="name"
+      placeholder="Enter Name..."
+      class="big-field"
+    />
+    <textarea
+      class="big-field"
+      type="text"
+      formControlName="desc"
+      placeholder="Enter Description..."
+      rows="2"
+    ></textarea>
+    <div formArrayName="questions">
+      <div *ngFor="let ques of questions().controls; let quesIndex = index">
+        <div [formGroupName]="quesIndex">
+          <div class="flex-row">
+            {{ quesIndex + 1 }}.
+            <input
+              type="text"
+              placeholder="Enter Question..."
+              formControlName="question"
+            />
+            <input
+              type="number"
+              placeholder="Enter Weight..."
+              formControlName="weight"
+            />
+            <button class="btn" (click)="removeQuestion(quesIndex)">
+              Remove Question
+            </button>
+            <button class="btn" type="button" (click)="addAnswer(quesIndex)">
+              Add optional Answer
+            </button>
+          </div>
+          <div formArrayName="answers" class="answers">
+            <div
+              *ngFor="
+                let answer of getAnswers(quesIndex).controls;
+                let answerIndex = index
+              "
+            >
+              <div [formGroupName]="answerIndex" class="flex-row">
+                {{ answerIndex + 1 }})
+                <input
+                  placeholder="Enter Answer..."
+                  type="text"
+                  formControlName="answer"
+                />
+                <input
+                  placeholder="Enter Score..."
+                  type="number"
+                  formControlName="score"
+                />
+                <button
+                  class="btn"
+                  (click)="removeAnswer(quesIndex, answerIndex)"
+                >
+                  Remove Answer
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="btn" type="button" (click)="addQuestion()">
+        Add Question
+      </button>
+    </div>
+  </form>
+</div>

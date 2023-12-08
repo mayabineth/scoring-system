@@ -1,0 +1,25 @@
+nav {
+  background: var(--clr-grey-5);
+  padding: 1.25rem 2rem;
+}
+.nav-center {
+  max-width: var(--max-width);
+  padding: 0 0.5rem;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.app-name {
+  letter-spacing: 1px;
+  color: var(--clr-white);
+  font-weight: 400;
+}
+.app-name:hover {
+  color: var(--clr-grey-10);
+}
+.list-icon {
+  color: var(--clr-white);
+  transform: scale(1.8);
+}

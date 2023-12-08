@@ -1,0 +1,15 @@
+<div class="section" *ngIf="companies">
+  <h3>Tests Results</h3>
+  <div *ngFor="let company of companies" class="grid">
+    <h4>Company: {{ company.name }}</h4>
+    <div class="grid">
+      <div
+        class="test"
+        [routerLink]="['/show-test', test.test_id]"
+        *ngFor="let test of company.tests"
+      >
+        <h4>Test Name: {{ test.test_name }} | Test Score: {{ test.score }}</h4>
+      </div>
+    </div>
+  </div>
+</div>

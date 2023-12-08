@@ -1,0 +1,23 @@
+<div class="section" *ngIf="tests">
+  <h3>Administration</h3>
+  <div class="filter-header">
+    <input
+      class="filter-input"
+      placeholder="Enter test name..."
+      type="text"
+      (input)="filterTest($event)"
+      #filterValue
+    />
+    <button class="flex-around" [routerLink]="['/test-definition']">
+      Add new test
+      <mat-icon> send </mat-icon>
+    </button>
+  </div>
+  <div
+    class="test"
+    [routerLink]="['/show-test', test._id]"
+    *ngFor="let test of tests | filterTests : filterValue.value"
+  >
+    <h4>name: {{ test.name }} | description: {{ test.desc }}</h4>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+<div class="section">
+  <h3>Tests Results</h3>
+  <div class="flex-row" *ngIf="!test.name">
+    <h4>Sorry. First choose test to fill.</h4>
+    <button [routerLink]="['/test-performing']" type="button">
+      Go to Test Performing
+    </button>
+  </div>
+  <div *ngIf="test.name" class="grid">
+    <h4>
+      Welcome <span class="bold-name">{{ test.company }}</span
+      >, Please Fill
+      <span class="bold-name">{{ test.name }}</span>
+    </h4>
+    <form [formGroup]="testForm" (ngSubmit)="onSubmit()" class="grid">
+      <div *ngFor="let question of test.questions" class="small-gap-grid">
+        <h4>{{ question.question }} (Weight: {{ question.weight }})</h4>
+        <div *ngFor="let option of question.answers">
+          <label>
+            <input
+              type="radio"
+              [value]="option.answer"
+              [formControlName]="question.question"
+            />
+            {{ option.answer }}
+          </label>
+        </div>
+      </div>
+      <button class="submit-btn" type="submit">Submit Test</button>
+      <h4 *ngIf="totalTestScore">Total Test Score: {{ totalTestScore }}</h4>
+    </form>
+  </div>
+</div>

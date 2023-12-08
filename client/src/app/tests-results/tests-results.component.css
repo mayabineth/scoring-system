@@ -1,0 +1,13 @@
+.test {
+  background-color: var(--clr-white);
+  border-radius: var(--radius);
+  box-shadow: var(--light-shadow);
+  padding: 1.3rem;
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: left;
+}
+.grid {
+  display: grid;
+  gap: 1rem;
+}
