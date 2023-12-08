@@ -35,5 +35,5 @@ npm run start
 show specific test
 ![image](https://github.com/mayabineth/scoring-system/assets/57454459/4903a244-de95-49be-815e-3c4f2bba49e7)
 execute a test
-![image](https://github.com/mayabineth/scoring-system/assets/57454459/c82c3f07-1fb8-4823-9fd6-f18daffb2a64)
+![image](https://github.com/mayabineth/scoring-system/assets/57454459/ef4b5254-0fc9-4b43-99a7-3cfd090f4db9)
 
